@@ -48,4 +48,7 @@ HTTP结构（首部字段的顺序不影响，如通用首部字段可以在请�
 2.收到数据包之后，发送ACK给服务器，表示已经收到数据包了  
 3.如果服务器没收到ACK（acknowledge）指令，则重新发送数据包  
 
+## NAT（Network Address Translation）,网络地址转换，又称IP地址掩蔽
+用于保护网络内部的计算机，使得计算机往外访问容易，但是外部找到这台计算机比较难。家庭小型路由就是一个NAT  
+![image](https://user-images.githubusercontent.com/83968454/203168684-3b3ab88f-f2b4-4cc6-b9a4-0359639c2fa5.png)
 
