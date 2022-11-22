@@ -1,6 +1,6 @@
 b站视频课  
 https://www.bilibili.com/video/BV137411Z7LR/?p=2&spm_id_from=pageDriver&vd_source=b3aa7c7adc98551fe4fc24f22a3e3c2b  
-### 1-1 应用层的三个例子：
+## 1-1 应用层的三个例子：
 1.__world wide web (HTTP)__，客户端-服务器模型  
 ![image](https://user-images.githubusercontent.com/83968454/203172501-8138d361-26f2-411e-857a-cedbae94df75.png)
 
@@ -13,7 +13,7 @@ https://www.bilibili.com/video/BV137411Z7LR/?p=2&spm_id_from=pageDriver&vd_sourc
 ![image](https://user-images.githubusercontent.com/83968454/203170783-83f8b5db-7284-49d4-abe3-08799d07a007.png)  
 ![image](https://user-images.githubusercontent.com/83968454/203171184-37011ca7-f8e8-4e0a-ba3d-339479fe727c.png)  
 
-### 1-2 网络模型的四层  
+## 1-2 网络模型的四层  
 ![image](https://user-images.githubusercontent.com/83968454/203173073-93e89051-396e-4fed-898a-57d161e8b63d.png)
 1.数据链路层(Link)：如wifi，以太网  
 ![image](https://user-images.githubusercontent.com/83968454/203173145-39644d6f-bd26-4ad3-8054-47f883295f8e.png)  
@@ -27,6 +27,28 @@ https://www.bilibili.com/video/BV137411Z7LR/?p=2&spm_id_from=pageDriver&vd_sourc
 此时可以UDP协议，该协议不保证传输的可靠性，只负责传输数据。
 4.应用层：如HTTP,BitTorent,skype
  
-### 1-3 IP服务
-
+## 1-3 详细介绍IP协议
+打包图示  
+![image](https://user-images.githubusercontent.com/83968454/203178498-17155990-00cf-4fdd-a3d0-65e3ccbf1bb0.png)  
+Hop-by-Hop routing:逐跳传输  
+在中间路由器发生拥堵时，路由会拒绝接受新的数据报，因此产生丢包，而发送者不知道这个过程。  
+而错的路由列表可能导致数据报没有被送到目的端，而IP不能保证这些不会发生  
+![image](https://user-images.githubusercontent.com/83968454/203179640-311f21ba-21ea-4a64-a384-dbef9eeec166.png)  
+### IP服务模型几个必须功能  
+1.必须能阻止数据报一直循环。解决办法：通过在数据报报头加一个跳数字段（也成为生存时间,time to live），记录该数据报经过了多少个路由，一般从128开始递减  
+2.如果包太大，则要把他分小。以太网每次最大只能传输1500字节的数据，因此每个包不能超过这个值。  
+3.报头有校验文件，使得传输到错误目的地的概率降低  
+4.允许新的IP版本，如IPv6。因为IPv4(32 bit 地址)的IP快被分配完毕了，现在慢慢过渡到IPv6（128 bit 地址）  
+5.允许向报头（header）添加新选项。  
+以下是IP的报头实例，Data是从传输层传过来的数据。其中  
+Destination IP Address和 Source IP Address 是最重要的两个  
+Protocol ID:指的是传输层用的协议（一共有140种不同的协议值），比如6是TCP协议，下面Data部分可以被TCP协议解析  
+Version:表示是IPv4还是IPv6  
+Total Packet Length ：包括报头和所有数据总长可以达到64kBytes  
+TTL：防止数据报在路由之间无限循环，占用资源，到达0时，路由会丢弃该数据报  
+Packet ID , Flags , Fragment Offset :用于帮助将数据报分成更小的部分  
+Type of Service 提示该数据报的重要性  
+Header Length：报头长度，报头还可能包含可选的其他字段  
+Ckecksum 对整个报头计算校核，防止报头是损坏的  
+![image](https://user-images.githubusercontent.com/83968454/203182201-8b97c0c2-4191-476d-9ed5-eec47b65494c.png)  
 
