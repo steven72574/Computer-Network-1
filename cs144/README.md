@@ -50,7 +50,7 @@ Hop-by-Hop routing:逐跳传输
 以下是IP的报头实例，Data是从传输层传过来的数据。其中  
 Destination IP Address和 Source IP Address 是最重要的两个  
 Protocol ID:指的是传输层用的协议（一共有140种不同的协议值），比如6是TCP协议，下面Data部分可以被TCP协议解析  
-Version:表示是IPv4还是IPv6  
+Version:表示是IPv4还是IPv6   
 Total Packet Length ：包括报头和所有数据总长可以达到64kBytes  
 TTL：防止数据报在路由之间无限循环，占用资源，到达0时，路由会丢弃该数据报  
 Packet ID , Flags , Fragment Offset :用于帮助将数据报分成更小的部分  
@@ -59,12 +59,27 @@ Header Length：报头长度，报头还可能包含可选的其他字段
 Ckecksum 对整个报头计算校核，防止报头是损坏的  
 ![image](https://user-images.githubusercontent.com/83968454/203182201-8b97c0c2-4191-476d-9ed5-eec47b65494c.png)  
 
-1-4 数据包的一生
+## 1-4 数据包的一生
 路由器存有转发表（forwarding table）存储ip地址，当一个包到达路由时，若此时没有比默认路由default route更具体的路由，则会选择默认路由，默认路由一般连接着更大的网络。比如在达姆图书馆使用图书馆wifi，此时图书馆的路由器会存有通往学校别的地方的路由地址，如机械院，计算机院的IP地址，如果客户端访问的目的地不是学校，则图书馆路由会选择默认路由，以通往更大的网络。
 wireshark抓包
 三次握手建立连接之后，客户端才向服务器发送GET请求  
 ![image](https://user-images.githubusercontent.com/83968454/203993088-b6e1d045-73c8-4394-bc65-94490eeee5ab.png)  
 以及通过 traceroute 查看访问一个网站所经过的路由  
 ![image](https://user-images.githubusercontent.com/83968454/203994498-d9e72885-8ad6-4f79-a4a8-129447ed5693.png)  
+
+## 1-5
+对于每个到达的包，单独地为它选择出口路径，如果该路径是空闲的，则传送过去，否则等待空闲时传送。交换机会有  
+分组交换有两个很好的特性：
+1.单独为每个数据包做出决策  
+2.不需要数据包上保存额外的信息，而且一个人使用时，不会占用线路，另一个人还是可以使用  
+![image](https://user-images.githubusercontent.com/83968454/203995393-11335d42-82a1-472b-9d74-ddaef44c817d.png)  
+数据流定义：是有着相同起点和终点的一系列数据包的集合，比如 TCP连接  
+![image](https://user-images.githubusercontent.com/83968454/203996758-74a27687-43f2-4c8f-9f08-6d4ef0ac41e2.png)  
+路由器不存储数据流的状态，不用存储是谁建立了连接，这样的话，一个路由器能多人同时使用，并且路由器不会需要巨大算力去管理这些状态   
+### 总结：  
+1.分组交换packet switching很简单，他独立地发送包，不需要了解什么是流flows  
+2.分组交换很高效，它可以让大家在有着许多流flow的同一条线路中共享容量  
+分组交换是建立网络最常用的方法  
+![image](https://user-images.githubusercontent.com/83968454/203997753-4e63eda9-8ddd-4f0a-9f92-dcb61bcd9282.png)  
 
 
