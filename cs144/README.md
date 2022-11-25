@@ -138,7 +138,7 @@ D -> 1
 E -> 2  
 
 ## 1-11 Address Resolution Protocol  
-ARP,地址解析协议是一个通过解析网络层地址来找寻数据链路层地址的网络传输协议，它在IPv4中极其重要。  
+ARP,地址解析协议是一个通过解析 __网络层地址__, __即IP__ 来找寻 __数据链路层地址__ 的网络传输协议，它在IPv4中极其重要。    
 IP地址是网络层地址，描述了主机，也就是网络层的唯一目的地  
 link address 描述了特定的网卡：发送和接收链路层数据 — — 帧的设备。  
 以太网有48位地址，买网卡的时候以经配备好唯一的以太网地址   
@@ -153,6 +153,22 @@ ARP是一个简单的 请求-应答协议
 为了使每个节点都能听到该请求，这个节点会将请求发送到链路层广播地址（link layer broadcast address）。发送请求时，会包含请求者的网络地址和链路层地址，因此，当节点听到请求时，能更新存在缓存中的映射。 
 ARP字段如下图  
 Hardware 说明此请求或响应应用于哪个链路层  
-Protocol说的是用的那个协议
-Opcode 说明是请求还是响应
-![image](https://user-images.githubusercontent.com/83968454/204062640-23d28ea2-5efa-4d73-bae8-036c1e5d9184.png)
+Protocol说的是用的那个协议  
+Opcode 说明是请求还是响应  
+Hardware address 硬件地址，数据链路层地址  
+Protocol address IP地址  
+
+![image](https://user-images.githubusercontent.com/83968454/204062640-23d28ea2-5efa-4d73-bae8-036c1e5d9184.png)  
+__例子__  
+hardware : 1 (Ethernet)  
+Protocol : 0X0800(IP)  
+hardware length :6(48bit Ethernet)  
+Protocol length : 4(32bit IP)  
+OPcode : 1(requst)  
+Hardware soure:68:a8:6d:05:85:22  
+Protocol soure:192.1168.0.5  
+Hardware destination: ?  
+Protocol destination: 192.168.0.1  
+
+客户端会在网络上发送这个帧，网络中的每个节点会收到它并且更新其链接地址的映射  客户端会发送带有Hardware destination为ff:ff:ff:ff:ff:ff的请求，网关发现该请求是针对自己的IP地址的，因此产生答复  
+![image](https://user-images.githubusercontent.com/83968454/204063013-68bc9b2d-cb07-4a74-a537-c9a8c8b9e7ad.png)    
