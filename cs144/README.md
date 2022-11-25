@@ -15,6 +15,13 @@ https://www.bilibili.com/video/BV137411Z7LR/?p=2&spm_id_from=pageDriver&vd_sourc
 
 ## 1-2 网络模型的四层  
 ![image](https://user-images.githubusercontent.com/83968454/203173073-93e89051-396e-4fed-898a-57d161e8b63d.png)  
+### 各层使用的单位  
+1、 应用层的PDU 称为数据；  
+2、 传输层的PDU 称为数据段；  
+3、 网络层的PDU 称为数据包；  
+4、网络接口层得PDU 称为帧；  
+5、介质实际传输实际使用的PDU 称为比特（位）。 
+### 各层介绍  
 1.数据链路层(Link)：如wifi，以太网  
 ![image](https://user-images.githubusercontent.com/83968454/203173145-39644d6f-bd26-4ad3-8054-47f883295f8e.png)  
 2.网络层(Network)。使用IP协议，单位为数据报(Datagrams),结尾包含起点和终点的IP信息。特点是：__尽力__将数据报传输给目的地，但不保证完整性，期间
