@@ -97,15 +97,41 @@ TLS为加密
 
 ## 1-9 IPv4
 ip地址是四个8位的值组成，8位也就是2^8 == 256，因此单个范围为0-255  
-Netmask 网络掩码，可以告诉哪些ip是在同一个网络中的，
-255.255.255.0 换成位就是 11111111.11111111.11111111.00000000
-255.255.252.0 换成位就是 11111111.11111111.11111100.00000000
-
+Netmask 网络掩码，可以告诉哪些ip是在同一个网络中的，  
+255.255.255.0 换成位就是 11111111.11111111.11111111.00000000  
+255.255.252.0 换成位就是 11111111.11111111.11111100.00000000  
+若本机IP为 192.168.0.100对于 255.255.255.0的子网掩码来说，如果我要发送的数据目的地Ip地址是以192.168.0开头的，则直接发送即可，不需要通过路由器往外部发送。  
 ``` java
 //A 为 A电脑的IP地址 ，B为B电脑的IP地址
 if(A & Netmask == B & Netmask)
     //则AB在同一网络中
 ```
+位运算
 ![image](https://user-images.githubusercontent.com/83968454/204020259-b799f60a-e6ae-4b47-a0e4-77c5927db937.png)
 
 ![image](https://user-images.githubusercontent.com/83968454/204019509-df3a4b80-f366-4634-be92-aff2a1785b45.png)
+
+### CIDR-Classless Inter-Domain Routing  
+翻译过来就是：无类域间路由，它是一种IP寻址方案，它改进了IP地址的分配。它取代了基于A、B、C类的旧系统，极大地延长了IPv4的使用寿命，减缓了路由表的增长速度。  
+下图中 A/24 24为子网掩码位长度  
+![image](https://user-images.githubusercontent.com/83968454/204024561-6ea011d7-e7f1-4837-9799-bddba860b4be.png)  
+
+## 1-10
+转发表是CIDR的集合  
+最长前缀匹配 longest prefix match,是ip路由器决定如何转发地址的算法  
+比如 171.33.0.1 都能符合下面的IP，但是 link为5的IP匹配的前缀长度为16 比0.0.0.0 匹配的前缀长度为0 要长。因此路由会选择link 5发出去。  
+![image](https://user-images.githubusercontent.com/83968454/204025908-30e27ac0-0b7f-413e-b669-90b9f57b51af.png)  
+
+![image](https://user-images.githubusercontent.com/83968454/204025164-de8e8159-3047-4bdd-ae30-aa4416148e8a.png)  
+### 小练习  
+![image](https://user-images.githubusercontent.com/83968454/204028454-b9a8795b-c005-474e-8057-88008907f868.png)  
+答案  
+转发表中，63.19.5.0/30后面的30表示必须前30位相同，否则不匹配  
+A -> 3  
+B -> 4  
+C -> 1  
+D -> 1  
+E -> 2  
+
+
+
