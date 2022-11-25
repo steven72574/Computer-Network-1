@@ -82,6 +82,30 @@ wireshark抓包
 分组交换是建立网络最常用的方法  
 ![image](https://user-images.githubusercontent.com/83968454/203997753-4e63eda9-8ddd-4f0a-9f92-dcb61bcd9282.png)  
 
-## 1-6
+## 1-6 Layering
+分层是个很重要的概念，在程序设计中很常使用  
+希望每一层隐藏一些实现细节，对外只显示其实现的功能  
+![image](https://user-images.githubusercontent.com/83968454/204008096-da6bac23-cc26-40e5-8afe-fde13dd9283c.png)  
+## 1-7
+封装的灵活性。  
+封装是便于分层，以及方便分层的实现
+TLS为加密  
+![image](https://user-images.githubusercontent.com/83968454/204012655-438dd8b4-87cd-47e6-9a02-c6d33617c891.png)  
 
+## 1-8字节储存顺序
+看不懂，先跳过
 
+## 1-9 IPv4
+ip地址是四个8位的值组成，8位也就是2^8 == 256，因此单个范围为0-255  
+Netmask 网络掩码，可以告诉哪些ip是在同一个网络中的，
+255.255.255.0 换成位就是 11111111.11111111.11111111.00000000
+255.255.252.0 换成位就是 11111111.11111111.11111100.00000000
+
+``` java
+//A 为 A电脑的IP地址 ，B为B电脑的IP地址
+if(A & Netmask == B & Netmask)
+    //则AB在同一网络中
+```
+![image](https://user-images.githubusercontent.com/83968454/204020259-b799f60a-e6ae-4b47-a0e4-77c5927db937.png)
+
+![image](https://user-images.githubusercontent.com/83968454/204019509-df3a4b80-f366-4634-be92-aff2a1785b45.png)
