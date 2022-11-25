@@ -112,7 +112,11 @@ if(A & Netmask == B & Netmask)
 ![image](https://user-images.githubusercontent.com/83968454/204019509-df3a4b80-f366-4634-be92-aff2a1785b45.png)
 
 ### CIDR-Classless Inter-Domain Routing  
+
 翻译过来就是：无类域间路由，它是一种IP寻址方案，它改进了IP地址的分配。它取代了基于A、B、C类的旧系统，极大地延长了IPv4的使用寿命，减缓了路由表的增长速度。  
+地址是 address,count 的对，其中 count 是 2 的幂 ，表示了子网掩码的长度  
+171.64.0.0/16 表示位于171.64.0.0 到171.64.255.255之间的地址。相当于前16位地址不变  
+A/24 相当于前24位不变，因此描述256个地址  
 下图中 A/24 24为子网掩码位长度  
 ![image](https://user-images.githubusercontent.com/83968454/204024561-6ea011d7-e7f1-4837-9799-bddba860b4be.png)  
 
