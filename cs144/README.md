@@ -14,7 +14,7 @@ https://www.bilibili.com/video/BV137411Z7LR/?p=2&spm_id_from=pageDriver&vd_sourc
 ![image](https://user-images.githubusercontent.com/83968454/203171184-37011ca7-f8e8-4e0a-ba3d-339479fe727c.png)  
 
 ## 1-2 网络模型的四层  
-![image](https://user-images.githubusercontent.com/83968454/203173073-93e89051-396e-4fed-898a-57d161e8b63d.png)
+![image](https://user-images.githubusercontent.com/83968454/203173073-93e89051-396e-4fed-898a-57d161e8b63d.png)  
 1.数据链路层(Link)：如wifi，以太网  
 ![image](https://user-images.githubusercontent.com/83968454/203173145-39644d6f-bd26-4ad3-8054-47f883295f8e.png)  
 2.网络层(Network)。使用IP协议，单位为数据报(Datagrams),结尾包含起点和终点的IP信息。特点是：__尽力__将数据报传输给目的地，但不保证完整性，期间
