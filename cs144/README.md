@@ -150,4 +150,9 @@ link address 描述了特定的网卡：发送和接收链路层数据 — — �
 ![image](https://user-images.githubusercontent.com/83968454/204034588-3514ee4f-b7ec-4a6d-bbdc-813e56e0c311.png)  
 ARP是一个简单的 请求-应答协议  
 每个节点（网关、路由器）保存了该网络上的IP地址到链路层的映射的缓存，如果当前节点没有缓存该IP地址的映射，则会发一个请求，询问有该IP地址节点，而有该IP地址的节点会做出响应，响应包括对应的链路层地址。  
-为了使每个节点都能听到该请求，这个节点会将请求发送到链路层广播地址（link layer broadcast address）。发送请求时，会包含请求者的网络地址和链路层地址，因此，当节点听到请求时，能更新存在缓存中的映射。  
+为了使每个节点都能听到该请求，这个节点会将请求发送到链路层广播地址（link layer broadcast address）。发送请求时，会包含请求者的网络地址和链路层地址，因此，当节点听到请求时，能更新存在缓存中的映射。 
+ARP字段如下图  
+Hardware 说明此请求或响应应用于哪个链路层  
+Protocol说的是用的那个协议
+Opcode 说明是请求还是响应
+![image](https://user-images.githubusercontent.com/83968454/204062640-23d28ea2-5efa-4d73-bae8-036c1e5d9184.png)
