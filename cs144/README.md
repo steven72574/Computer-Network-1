@@ -59,3 +59,12 @@ Header Length：报头长度，报头还可能包含可选的其他字段
 Ckecksum 对整个报头计算校核，防止报头是损坏的  
 ![image](https://user-images.githubusercontent.com/83968454/203182201-8b97c0c2-4191-476d-9ed5-eec47b65494c.png)  
 
+1-4 数据包的一生
+路由器存有转发表（forwarding table）存储ip地址，当一个包到达路由时，若此时没有比默认路由default route更具体的路由，则会选择默认路由，默认路由一般连接着更大的网络。比如在达姆图书馆使用图书馆wifi，此时图书馆的路由器会存有通往学校别的地方的路由地址，如机械院，计算机院的IP地址，如果客户端访问的目的地不是学校，则图书馆路由会选择默认路由，以通往更大的网络。
+wireshark抓包
+三次握手建立连接之后，客户端才向服务器发送GET请求  
+![image](https://user-images.githubusercontent.com/83968454/203993088-b6e1d045-73c8-4394-bc65-94490eeee5ab.png)  
+以及通过 traceroute 查看访问一个网站所经过的路由  
+![image](https://user-images.githubusercontent.com/83968454/203994498-d9e72885-8ad6-4f79-a4a8-129447ed5693.png)  
+
+
