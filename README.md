@@ -4,8 +4,8 @@ HTTP (HyperText Transfer Protocol)
 TCP/IP是互联网相关各类协议的总称  
 包括四层：  
 1.__应用层__：负责应用与电脑之间的通信，如HTTP，FTP(File Transfer Protocol),DNS(Domain Name System) ,DNS负责域名到IP地址间的解析服务   
-2.__传输层__：负责为处于网络连接中的两台计算机之间的数据传输（包括分割数据包与合并数据包），有TCP(Transmission Contril Protocol)和UDP(User Data Control)   
-3.__网络层__：处理网络上流动的数据包，网络层所起的作用就是在众多的选项内选择一条传输路线，IP(Internet Protocol)协议   
+2.__传输层__：将数据段(segment)可靠地传递给运行在另一台计算机上地应用程序（包括分割数据段与合并数据段），协议有TCP(Transmission Contril Protocol)和UDP(User Data Control)   
+3.__网络层__：把数据包传(packet)送到另一台计算机，网络层所起的作用就是在众多的选项内选择一条传输路线，IP(Internet Protocol)协议   
 4.__链路层__：硬件上的范畴均在链路层的作用范围之内。  
 ![image](https://user-images.githubusercontent.com/83968454/203115774-e0858077-5424-4dd7-a3a5-f940ce49253c.png)  
 TCP协议的三次握手策略   
