@@ -27,7 +27,7 @@ https://www.bilibili.com/video/BV137411Z7LR/?p=2&spm_id_from=pageDriver&vd_sourc
 2.网络层(Network)。使用IP协议，单位为数据报(packet),结尾包含起点和终点的IP信息。特点是：__尽力__ 将数据报传输给目的地，但不保证完整性，期间
 可能没有送达目的地，可能不按顺序传输，可能多传输了数据报，数据报也可能损坏。
 ![image](https://user-images.githubusercontent.com/83968454/203173294-c1d29ede-2177-43fe-a26a-067d548120cf.png)  
-传输过程：路由器中接受来自链路层的数据报，然后交给路由器中的应用层，然后解析IP地址，根据IP地址往下一个路由传递，直到到达客户端  
+传输过程：路由器中接受来自链路层的帧，然后交给路由器中的网络层，然后解析IP地址，根据IP地址往下一个路由传递，直到到达客户端  
 ![image](https://user-images.githubusercontent.com/83968454/203173943-53f681a9-0945-406b-b022-9e728ce0cb5e.png)  
 3.传输层(Transport):控制拥塞，使用TCP(Transmission Control Protocol)协议，确保一端的应用程序发送的数据以正确的顺序，不丢包，无损坏地传递到另一端的应用程序。
 但是有例外，比如视频通话，丢包的情况并不会太影响通话质量，可能知识视频分辨率变低，但是如果丢包时再重复去请求，此时会造成卡顿和不必要的资源浪费。
