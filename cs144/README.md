@@ -24,7 +24,7 @@ https://www.bilibili.com/video/BV137411Z7LR/?p=2&spm_id_from=pageDriver&vd_sourc
 ### 各层介绍  
 1.数据链路层(Link)：如wifi，以太网  
 ![image](https://user-images.githubusercontent.com/83968454/203173145-39644d6f-bd26-4ad3-8054-47f883295f8e.png)  
-2.网络层(Network)。使用IP协议，单位为数据报(packet),结尾包含起点和终点的IP信息。特点是：__尽力__将数据报传输给目的地，但不保证完整性，期间
+2.网络层(Network)。使用IP协议，单位为数据报(packet),结尾包含起点和终点的IP信息。特点是：__尽力__ 将数据报传输给目的地，但不保证完整性，期间
 可能没有送达目的地，可能不按顺序传输，可能多传输了数据报，数据报也可能损坏。
 ![image](https://user-images.githubusercontent.com/83968454/203173294-c1d29ede-2177-43fe-a26a-067d548120cf.png)  
 传输过程：路由器中接受来自链路层的数据报，然后交给路由器中的应用层，然后解析IP地址，根据IP地址往下一个路由传递，直到到达客户端  
