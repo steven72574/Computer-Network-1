@@ -167,7 +167,7 @@ Protocol length : 4(32bit IP)
 OPcode : 1(requst)  
 Hardware soure:68:a8:6d:05:85:22  
 Protocol soure:192.1168.0.5  
-Hardware destination: ?  
+Hardware destination: ff:ff:ff:ff:ff:ff（broadcast address）  
 Protocol destination: 192.168.0.1  
 
 客户端会在网络上发送这个帧，网络中的每个节点会收到它并且更新其链接地址的映射  客户端会发送带有Hardware destination为ff:ff:ff:ff:ff:ff的请求，网关发现该请求是针对自己的IP地址的，因此产生答复  
