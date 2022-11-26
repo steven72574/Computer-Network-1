@@ -86,9 +86,9 @@ wireshark抓包
 分层是个很重要的概念，在程序设计中很常使用  
 希望每一层隐藏一些实现细节，对外只显示其实现的功能  
 ![image](https://user-images.githubusercontent.com/83968454/204008096-da6bac23-cc26-40e5-8afe-fde13dd9283c.png)  
-## 1-7
+## 1-7 封装Encapsulation
 封装的灵活性。  
-封装是便于分层，以及方便分层的实现
+封装是便于分层，以及方便分层的实现  
 TLS为加密  
 ![image](https://user-images.githubusercontent.com/83968454/204012655-438dd8b4-87cd-47e6-9a02-c6d33617c891.png)  
 
