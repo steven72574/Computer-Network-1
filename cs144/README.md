@@ -67,7 +67,7 @@ wireshark抓包
 以及通过 traceroute 查看访问一个网站所经过的路由  
 ![image](https://user-images.githubusercontent.com/83968454/203994498-d9e72885-8ad6-4f79-a4a8-129447ed5693.png)  
 
-## 1-5
+## 1-5 Packet Switching 分组交换
 对于每个到达的包，单独地为它选择出口路径，如果该路径是空闲的，则传送过去，否则等待空闲时传送。交换机会有  
 分组交换有两个很好的特性：  
 1.单独为每个数据包做出决策  
