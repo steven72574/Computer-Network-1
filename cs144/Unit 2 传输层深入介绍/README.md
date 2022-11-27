@@ -3,7 +3,7 @@
 A将流中的字节放入TCP段中，交给IP层，TCP也可以小到1字节，但是当数据量大的时候，这样不是很高效，因此可以填充tcp段一直到最大IP数据包的大小  
 建立连接后，两端会有state machine状态机保持这个连接。
 ![image](https://user-images.githubusercontent.com/83968454/204064170-30d29f24-a529-46b9-8d49-be46151770b4.png)
-### TCP 服务模型
+### 2-1 TCP服务模型
 
 ![image](https://user-images.githubusercontent.com/83968454/204114503-0c47079c-29a1-4287-83c9-01658e880920.png)
 Source Port :数值不能大于2^16-1。请求发出去后，响应的信息将会回到这个端口。当连接发起时，连接发起方会生成唯一的源端口号，因此连接与其他连接区分开  
@@ -18,4 +18,12 @@ Destination Port :应用程序的端口号，类似于Ip协议的IP地址，端�
 ![image](https://user-images.githubusercontent.com/83968454/204115169-2dcaf4c8-434a-4933-aa08-da764c2dad24.png)  
 Unique ID，一个TCP连接由上面五个信息唯一标识。
 当发送方开始建立TCP连接时，会创建新的端口号，可以避免与另一个有着相同Unique ID 的TCP连接重复，新端口号最多允许64k个连接。但是当A主机突然发送很多连接时，也可能出现端口号重复的情况，因此A的端口号选择是随机的，能尽可能避免这种情况发生。  
+### 2-2 UDP服务模型
+Length：Headers + data的长度  
+Checksum: IPv4协议时，该字段是可选的，若没有，则全为0  
+DNS就是使用UDP协议，简单快速，无需建立连接  
+![image](https://user-images.githubusercontent.com/83968454/204115403-ecde7cf6-5752-4cb3-a191-75307d6a69b2.png)   
+![image](https://user-images.githubusercontent.com/83968454/204115529-5b784338-4547-4f86-87b3-95fd53dd1f0b.png)  
+
+
 
