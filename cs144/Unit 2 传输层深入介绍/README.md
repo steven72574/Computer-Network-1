@@ -15,9 +15,11 @@ SYN:三次握手的一部分
 FIN:指示连接的一个方向的关闭  
 PSH：指示另一端的TCP层在数据到达后立刻传输数据，而不是等待更多数据。对于某些对时间有要求的数据比如按键，很有用。  
 Destination Port :应用程序的端口号，类似于Ip协议的IP地址，端口号是应用程序的地址。web端口号是80。IANA可以查端口号。ssh连接端口号是22，smtp邮件是23  
-![image](https://user-images.githubusercontent.com/83968454/204115169-2dcaf4c8-434a-4933-aa08-da764c2dad24.png)  
+![image](https://user-images.githubusercontent.com/83968454/204129555-ac14b211-c7b0-4846-b327-0f64411c3c01.png)  
+
 Unique ID，一个TCP连接由上面五个信息唯一标识。
 当发送方开始建立TCP连接时，会创建新的端口号，可以避免与另一个有着相同Unique ID 的TCP连接重复，新端口号最多允许64k个连接。但是当A主机突然发送很多连接时，也可能出现端口号重复的情况，因此A的端口号选择是随机的，能尽可能避免这种情况发生。  
+![image](https://user-images.githubusercontent.com/83968454/204115169-2dcaf4c8-434a-4933-aa08-da764c2dad24.png)  
 ### 2-2 UDP服务模型
 Length：Headers + data的长度  
 Checksum: IPv4协议时，该字段是可选的，若没有，则全为0  
