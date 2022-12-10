@@ -69,6 +69,8 @@ Divisor有L位，则在被除数后面加L-1个0，如下图所示。二进制�
 接收方把收到的数据（带CRC的），除以divisor，最后得到的余数为000（L-1个0），则说明数据无误，接收数据  
 ![image](https://user-images.githubusercontent.com/83968454/206816882-eb5a3a3d-70d8-406d-bd4f-22d426bf5a44.png)  
 
-MAC
+MAC：密码学范畴，有密钥，他不能保证一定检测出错误，主要是比较安全，错误检测是附带的。
+![image](https://user-images.githubusercontent.com/83968454/206818940-71c5c0ac-0a48-4284-9075-5cac7b86c316.png)
+
 
 
